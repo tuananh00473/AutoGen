@@ -139,7 +139,7 @@ public class MetaColumn
         {
             return "double";
         }
-        if (compare(typeData, "DATE") || compare(typeData, "DATETIME") || compare(typeData, "timestamp"))
+        if (compare(typeData, "DATE") || compare(typeData, "DATETIME") || compare(typeData, "timestamp") || compare(typeData, "timestamptz"))
         {
             return "Date";
         }

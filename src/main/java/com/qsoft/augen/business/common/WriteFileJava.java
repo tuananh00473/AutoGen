@@ -12,8 +12,7 @@ public class WriteFileJava
 
 	public static void WritToFile(String path, String fileName, String content) {
 		try {
-            File file = new File(path);
-            file.mkdir();
+            makePath(path);
 			FileWriter fstream = new FileWriter(path + fileName);
 			BufferedWriter out = new BufferedWriter(fstream);
 			out.write(content);
@@ -23,14 +22,16 @@ public class WriteFileJava
 		}
 	}
 
-	public static void copyFile(String source, String destination) {
-		File sourceFile = new File(source);
-		String name = sourceFile.getName();
-		File targetFile = new File(destination + name);
-		try {
-			FileUtils.copyFile(sourceFile, targetFile);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+    public static void makePath(String path)
+    {
+        String regex = "/";
+        String[] subPath = path.split(regex);
+        String prePath = subPath[0]+regex+regex;
+        for (int i=2; i<subPath.length; i++)
+        {
+            prePath = prePath.concat(subPath[i] + regex);
+            File file = new File(prePath);
+            file.mkdir();
+        }
+    }
 }

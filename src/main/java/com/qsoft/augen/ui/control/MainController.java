@@ -7,8 +7,12 @@ import com.qsoft.augen.persistence.entity.PropertyDB;
 import com.qsoft.augen.ui.common.DaoUtils;
 import com.qsoft.augen.ui.common.ListBinding;
 import com.qsoft.augen.ui.common.TableBinding;
+import com.qsoft.augen.ui.view.FileChooserGui;
 import com.qsoft.augen.ui.view.MainGui;
 
+import javax.swing.*;
+import javax.swing.plaf.ComponentUI;
+import javax.swing.plaf.FileChooserUI;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -155,5 +159,10 @@ public class MainController
     {
         int indexSelected = mainGui.getListTable().getSelectedIndex();
         TableBinding.bindingMetaColumn(metaTables.get(indexSelected).getMetaColumns(), mainGui.getTableColumn(), mainGui.getPanelListTable());
+    }
+
+    public void setOutput()
+    {
+        new FileChooserGui().show();
     }
 }

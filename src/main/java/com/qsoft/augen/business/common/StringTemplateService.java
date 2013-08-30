@@ -12,7 +12,7 @@ import java.util.List;
 public class StringTemplateService
 {
 
-    public final static String PATH_TEMPLATE_RESOURCE = "C://Users/anhnt/Desktop/DoAn-master/DoAn-master/src/main/resources/template/";
+    public final static String PATH_TEMPLATE_RESOURCE = "D://Do_An/AutoGen/src/main/resources/template/";
 
     public final static String PATH_OUT_PUT_ENTITY = "D://Do_An/ProjectAutoGen/src/main/java/com/ptit/augen/persistence/entity/";
     public final static String PATH_OUT_PUT_INTERFACE_SERVICE = "D://Do_An/ProjectAutoGen/src/main/java/com/ptit/augen/business/";
@@ -20,7 +20,7 @@ public class StringTemplateService
     public final static String PATH_OUT_PUT_INTERFACE_DAO = "D://Do_An/ProjectAutoGen/src/main/java/com/ptit/augen/persistence/dao/";
     public final static String PATH_OUT_PUT_DAO_IMLP = "D://Do_An/ProjectAutoGen/src/main/java/com/ptit/augen/persistence/dao/impl/";
 
-    public final static String PATH_OUT_PUT_POM = "D://Do_An/ProjectAutoGen/";
+    public final static String PATH_OUT_PUT = "D://Do_An/ProjectAutoGen/";
     public final static String PATH_OUT_PUT_PERSISTENCE_FILE = "D://Do_An/ProjectAutoGen/src/main/resources/META-INF/";
     public final static String PATH_OUT_PUT_PROPERTY_FILE = "D://Do_An/ProjectAutoGen/src/main/resources/";
     public final static String PATH_OUT_PUT_SPRING_CONFIG_FILE = "D://Do_An/ProjectAutoGen/src/main/resources/";
@@ -147,7 +147,7 @@ public class StringTemplateService
         String content = template.toString();
         String fileName = "pom.xml";
 
-        WriteFileJava.WritToFile(PATH_OUT_PUT_POM, fileName, content);
+        WriteFileJava.WritToFile(PATH_OUT_PUT, fileName, content);
     }
 
     public static void genPersistenceFile()

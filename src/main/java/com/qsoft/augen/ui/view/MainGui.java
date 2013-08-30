@@ -36,6 +36,8 @@ public class MainGui extends JFrame
     private JButton btnDisConnect;
     private JScrollPane panelListTable;
     private JScrollPane panelTableColumn;
+    private JTextField txtOutput;
+    private JButton btnOutput;
 
     public MainGui(final MainController mainController)
     {
@@ -77,6 +79,15 @@ public class MainGui extends JFrame
             public void actionPerformed(ActionEvent e)
             {
                 mainController.doQuit();
+            }
+        });
+
+        btnOutput.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                mainController.setOutput();
             }
         });
 
@@ -219,7 +230,7 @@ public class MainGui extends JFrame
         CellConstraints cc = new CellConstraints();
         panel4.add(label3, cc.xy(1, 1, CellConstraints.RIGHT, CellConstraints.FILL));
         txtDBName = new JTextField();
-        txtDBName.setText("prism_db_test");
+        txtDBName.setText("prism");
         panel4.add(txtDBName, cc.xy(3, 1, CellConstraints.FILL, CellConstraints.DEFAULT));
         final JLabel label4 = new JLabel();
         label4.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -233,12 +244,12 @@ public class MainGui extends JFrame
         label5.setText("PASS WORD");
         panel4.add(label5, cc.xy(1, 5, CellConstraints.RIGHT, CellConstraints.FILL));
         txtPassWord = new JPasswordField();
-        txtPassWord.setText("postgres");
+        txtPassWord.setText("123456");
         panel4.add(txtPassWord, cc.xy(3, 5, CellConstraints.FILL, CellConstraints.DEFAULT));
-        btnConnect = new javax.swing.JButton();
+        btnConnect = new JButton();
         btnConnect.setText("CONNECT");
         panel4.add(btnConnect, cc.xy(1, 7));
-        btnDisConnect = new javax.swing.JButton();
+        btnDisConnect = new JButton();
         btnDisConnect.setText("DISCONNECT");
         panel4.add(btnDisConnect, cc.xy(3, 7));
         panelListTable = new JScrollPane();
@@ -250,31 +261,45 @@ public class MainGui extends JFrame
         tableColumn = new JTable();
         panelTableColumn.setViewportView(tableColumn);
         final JPanel panel5 = new JPanel();
-        panel5.setLayout(new GridLayoutManager(7, 4, new Insets(0, 0, 0, 0), -1, -1));
+        panel5.setLayout(new GridLayoutManager(11, 5, new Insets(0, 0, 0, 0), -1, -1));
         mainPanel.add(panel5, BorderLayout.SOUTH);
-        btnGeneric = new javax.swing.JButton();
+        btnGeneric = new JButton();
         btnGeneric.setText("GENERATE");
-        panel5.add(btnGeneric, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(91, 25), null, 0, false));
+        panel5.add(btnGeneric, new GridConstraints(7, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(91, 25), null, 0, false));
         final Spacer spacer1 = new Spacer();
-        panel5.add(spacer1, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, new Dimension(290, 11), null, 0, false));
-        btnQuit = new javax.swing.JButton();
+        panel5.add(spacer1, new GridConstraints(7, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, new Dimension(290, 11), null, 0, false));
+        btnQuit = new JButton();
         btnQuit.setText("QUIT");
-        panel5.add(btnQuit, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(213, 25), null, 0, false));
+        panel5.add(btnQuit, new GridConstraints(7, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(213, 25), null, 0, false));
         final JSeparator separator7 = new JSeparator();
-        panel5.add(separator7, new GridConstraints(4, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panel5.add(separator7, new GridConstraints(8, 0, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final JSeparator separator8 = new JSeparator();
-        panel5.add(separator8, new GridConstraints(5, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panel5.add(separator8, new GridConstraints(9, 0, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final JSeparator separator9 = new JSeparator();
-        panel5.add(separator9, new GridConstraints(6, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panel5.add(separator9, new GridConstraints(10, 0, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final JSeparator separator10 = new JSeparator();
-        panel5.add(separator10, new GridConstraints(0, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panel5.add(separator10, new GridConstraints(0, 0, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final JSeparator separator11 = new JSeparator();
-        panel5.add(separator11, new GridConstraints(2, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panel5.add(separator11, new GridConstraints(2, 0, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final JSeparator separator12 = new JSeparator();
-        panel5.add(separator12, new GridConstraints(1, 0, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panel5.add(separator12, new GridConstraints(1, 0, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final JLabel label6 = new JLabel();
-        label6.setText("");
-        panel5.add(label6, new GridConstraints(3, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        label6.setText("        ");
+        panel5.add(label6, new GridConstraints(7, 4, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        txtOutput = new JTextField();
+        panel5.add(txtOutput, new GridConstraints(3, 1, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        btnOutput = new JButton();
+        btnOutput.setText("OUTPUT");
+        panel5.add(btnOutput, new GridConstraints(3, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JLabel label7 = new JLabel();
+        label7.setText("        ");
+        panel5.add(label7, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JSeparator separator13 = new JSeparator();
+        panel5.add(separator13, new GridConstraints(4, 0, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        final JSeparator separator14 = new JSeparator();
+        panel5.add(separator14, new GridConstraints(5, 0, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        final JSeparator separator15 = new JSeparator();
+        panel5.add(separator15, new GridConstraints(6, 0, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
     }
 
     /**
