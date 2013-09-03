@@ -11,19 +11,7 @@ import java.util.List;
 
 public class StringTemplateService
 {
-
     public final static String PATH_TEMPLATE_RESOURCE = "D://Do_An/AutoGen/src/main/resources/template/";
-
-    public final static String PATH_OUT_PUT_ENTITY = "D://Do_An/ProjectAutoGen/src/main/java/com/ptit/augen/persistence/entity/";
-    public final static String PATH_OUT_PUT_INTERFACE_SERVICE = "D://Do_An/ProjectAutoGen/src/main/java/com/ptit/augen/business/";
-    public final static String PATH_OUT_PUT_SERVICE_IMLP = "D://Do_An/ProjectAutoGen/src/main/java/com/ptit/augen/business/impl/";
-    public final static String PATH_OUT_PUT_INTERFACE_DAO = "D://Do_An/ProjectAutoGen/src/main/java/com/ptit/augen/persistence/dao/";
-    public final static String PATH_OUT_PUT_DAO_IMLP = "D://Do_An/ProjectAutoGen/src/main/java/com/ptit/augen/persistence/dao/impl/";
-
-    public final static String PATH_OUT_PUT = "D://Do_An/ProjectAutoGen/";
-    public final static String PATH_OUT_PUT_PERSISTENCE_FILE = "D://Do_An/ProjectAutoGen/src/main/resources/META-INF/";
-    public final static String PATH_OUT_PUT_PROPERTY_FILE = "D://Do_An/ProjectAutoGen/src/main/resources/";
-    public final static String PATH_OUT_PUT_SPRING_CONFIG_FILE = "D://Do_An/ProjectAutoGen/src/main/resources/";
 
     public final static String GROUP_ID = "com.qsoft.augen";
     public final static String ARTIFACT_ID = "AutoGenAdminWebPage";
@@ -37,7 +25,7 @@ public class StringTemplateService
 
     static StringTemplateGroup group = new StringTemplateGroup("myGroup", PATH_TEMPLATE_RESOURCE, DefaultTemplateLexer.class);
 
-    public static void genEntity(List<MetaTable> metaTables)
+    public static void genEntity(List<MetaTable> metaTables, String PATH_OUT_PUT_ENTITY)
     {
         for (Iterator<MetaTable> it = metaTables.iterator(); it.hasNext(); )
         {
@@ -56,7 +44,7 @@ public class StringTemplateService
         }
     }
 
-    public static void genDAOInterface(List<MetaTable> metaTables)
+    public static void genDAOInterface(List<MetaTable> metaTables, String PATH_OUT_PUT_INTERFACE_DAO)
     {
         for (Iterator<MetaTable> it = metaTables.iterator(); it.hasNext(); )
         {
@@ -75,7 +63,7 @@ public class StringTemplateService
         }
     }
 
-    public static void genDaoImpl(List<MetaTable> metaTables)
+    public static void genDaoImpl(List<MetaTable> metaTables, String PATH_OUT_PUT_DAO_IMLP)
     {
         for (Iterator<MetaTable> it = metaTables.iterator(); it.hasNext(); )
         {
@@ -96,7 +84,7 @@ public class StringTemplateService
         }
     }
 
-    public static void genServiceInterface(List<MetaTable> metaTables)
+    public static void genServiceInterface(List<MetaTable> metaTables, String PATH_OUT_PUT_INTERFACE_SERVICE)
     {
         for (Iterator<MetaTable> it = metaTables.iterator(); it.hasNext(); )
         {
@@ -115,7 +103,7 @@ public class StringTemplateService
         }
     }
 
-    public static void genServiceImpl(List<MetaTable> metaTables)
+    public static void genServiceImpl(List<MetaTable> metaTables, String PATH_OUT_PUT_SERVICE_IMLP)
     {
         for (Iterator<MetaTable> it = metaTables.iterator(); it.hasNext(); )
         {
@@ -137,7 +125,7 @@ public class StringTemplateService
         }
     }
 
-    public static void genPomFile()
+    public static void genPomFile(String PATH_OUT_PUT)
     {
         StringTemplate template = group.getInstanceOf("Pom");
 
@@ -150,7 +138,7 @@ public class StringTemplateService
         WriteFileJava.WritToFile(PATH_OUT_PUT, fileName, content);
     }
 
-    public static void genPersistenceFile()
+    public static void genPersistenceFile(String PATH_OUT_PUT_PERSISTENCE_FILE)
     {
         StringTemplate template = group.getInstanceOf("Persistence");
         String content = template.toString();
@@ -158,7 +146,7 @@ public class StringTemplateService
         WriteFileJava.WritToFile(PATH_OUT_PUT_PERSISTENCE_FILE, fileName, content);
     }
 
-    public static void genPropertiesFile(PropertyDB propertyDB)
+    public static void genPropertiesFile(PropertyDB propertyDB, String PATH_OUT_PUT_RESOURCE)
     {
         StringTemplate template = group.getInstanceOf("Properties");
 
@@ -169,10 +157,10 @@ public class StringTemplateService
 
         String content = template.toString();
         String fileName = "db.properties";
-        WriteFileJava.WritToFile(PATH_OUT_PUT_PROPERTY_FILE, fileName, content);
+        WriteFileJava.WritToFile(PATH_OUT_PUT_RESOURCE, fileName, content);
     }
 
-    public static void genSpringConfigFile(PropertyDB propertyDB)
+    public static void genSpringConfigFile(PropertyDB propertyDB, String PATH_OUT_PUT_RESOURCE)
     {
         StringTemplate template = group.getInstanceOf("Spring-Config");
 
@@ -184,6 +172,6 @@ public class StringTemplateService
 
         String content = template.toString();
         String fileName = "spring-config.xml";
-        WriteFileJava.WritToFile(PATH_OUT_PUT_SPRING_CONFIG_FILE, fileName, content);
+        WriteFileJava.WritToFile(PATH_OUT_PUT_RESOURCE, fileName, content);
     }
 }

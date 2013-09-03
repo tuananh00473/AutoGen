@@ -121,7 +121,7 @@
                       <forms defaultalign-horz="false"/>
                     </constraints>
                     <properties>
-                      <text value="prism"/>
+                      <text value="autogen"/>
                     </properties>
                   </component>
                   <component id="d0da" class="javax.swing.JLabel">
@@ -142,7 +142,7 @@
                       <forms defaultalign-horz="false"/>
                     </constraints>
                     <properties>
-                      <text value="postgres"/>
+                      <text value="admin"/>
                     </properties>
                   </component>
                   <component id="ee694" class="javax.swing.JLabel">
