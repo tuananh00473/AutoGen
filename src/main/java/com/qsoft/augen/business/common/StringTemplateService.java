@@ -13,14 +13,14 @@ public class StringTemplateService
 {
     public final static String PATH_TEMPLATE_RESOURCE = "D://Do_An/AutoGen/src/main/resources/template/";
 
-    public final static String GROUP_ID = "com.qsoft.augen";
+    public final static String GROUP_ID = "com.ptit.augen";
     public final static String ARTIFACT_ID = "AutoGenAdminWebPage";
 
-    public final static String PACKAGE_ENTITY = "com.qsoft.augen.persistence.entity";
-    public final static String PACKAGE_DAO_IMPL = "com.qsoft.augen.persistence.dao.impl";
-    public final static String PACKAGE_DAO_INTERFACE = "com.qsoft.augen.persistence.dao";
-    public final static String PACKAGE_SERVICE_IMPL = "com.qsoft.augen.business.impl";
-    public final static String PACKAGE_SERVICE_INTERFACE = "com.qsoft.augen.business";
+    public final static String PACKAGE_ENTITY = "com.ptit.augen.persistence.entity";
+    public final static String PACKAGE_DAO_IMPL = "com.ptit.augen.persistence.dao.impl";
+    public final static String PACKAGE_DAO_INTERFACE = "com.ptit.augen.persistence.dao";
+    public final static String PACKAGE_SERVICE_IMPL = "com.ptit.augen.business.impl";
+    public final static String PACKAGE_SERVICE_INTERFACE = "com.ptit.augen.business";
 
 
     static StringTemplateGroup group = new StringTemplateGroup("myGroup", PATH_TEMPLATE_RESOURCE, DefaultTemplateLexer.class);

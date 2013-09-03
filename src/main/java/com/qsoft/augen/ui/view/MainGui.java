@@ -256,10 +256,10 @@ public class MainGui extends JFrame
         txtPassWord = new JPasswordField();
         txtPassWord.setText("123456");
         panel4.add(txtPassWord, cc.xy(3, 5, CellConstraints.FILL, CellConstraints.DEFAULT));
-        btnConnect = new JButton();
+        btnConnect = new javax.swing.JButton();
         btnConnect.setText("CONNECT");
         panel4.add(btnConnect, cc.xy(1, 7));
-        btnDisConnect = new JButton();
+        btnDisConnect = new javax.swing.JButton();
         btnDisConnect.setText("DISCONNECT");
         panel4.add(btnDisConnect, cc.xy(3, 7));
         panelListTable = new JScrollPane();
@@ -273,12 +273,12 @@ public class MainGui extends JFrame
         final JPanel panel5 = new JPanel();
         panel5.setLayout(new GridLayoutManager(11, 5, new Insets(0, 0, 0, 0), -1, -1));
         mainPanel.add(panel5, BorderLayout.SOUTH);
-        btnGeneric = new JButton();
+        btnGeneric = new javax.swing.JButton();
         btnGeneric.setText("GENERATE");
         panel5.add(btnGeneric, new GridConstraints(7, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(91, 25), null, 0, false));
         final Spacer spacer1 = new Spacer();
         panel5.add(spacer1, new GridConstraints(7, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, new Dimension(290, 11), null, 0, false));
-        btnQuit = new JButton();
+        btnQuit = new javax.swing.JButton();
         btnQuit.setText("QUIT");
         panel5.add(btnQuit, new GridConstraints(7, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(213, 25), null, 0, false));
         final JSeparator separator7 = new JSeparator();
@@ -298,7 +298,7 @@ public class MainGui extends JFrame
         panel5.add(label6, new GridConstraints(7, 4, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         txtOutput = new JTextField();
         panel5.add(txtOutput, new GridConstraints(3, 1, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        btnOutput = new JButton();
+        btnOutput = new javax.swing.JButton();
         btnOutput.setText("OUTPUT");
         panel5.add(btnOutput, new GridConstraints(3, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label7 = new JLabel();
