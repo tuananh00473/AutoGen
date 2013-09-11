@@ -11,11 +11,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "$tableName$")
-@SequenceGenerator(name = "$tableName$_id_seq", sequenceName = "$tableName$_id_seq", allocationSize = 1)
 public class $entity$ {$meta_columns :{ metaColumn |
     $if(metaColumn.flagPrimaryKey)$
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     $endif$
     @Column(name = "$metaColumn.nameColumn$")
     private $metaColumn.typeData$ $metaColumn.nameColumn$;

@@ -23,17 +23,13 @@ public class $entity$ServiceImpl implements $entity$Service
     @Override
     public $entity$ findById($type_of_key$ id)
     {
-        return $entity_lowwerCase$DAO.findById(id);
+        return $entity_lowwerCase$DAO.findOne(id);
     }
 
     @Override
     public void save($entity$ entity)
     {
-        if(entity.getId()!=null)
-        {
-            $entity_lowwerCase$DAO.insert(entity);
-        }
-        $entity_lowwerCase$DAO.update(entity);
+        $entity_lowwerCase$DAO.saveAndFlush(entity);
     }
 
     @Override
@@ -43,8 +39,14 @@ public class $entity$ServiceImpl implements $entity$Service
     }
 
     @Override
+    public void remove($type_of_key$ id)
+    {
+        $entity_lowwerCase$DAO.delete(id);
+    }
+
+    @Override
     public List<$entity$> getAll()
     {
-        return $entity_lowwerCase$DAO.getAll();
+        return $entity_lowwerCase$DAO.findAll();
     }
 }

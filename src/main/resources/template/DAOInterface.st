@@ -9,15 +9,6 @@ import $entity_package$.$entity$;
  * Dev: JAVA
  */
 
-public interface $entity$DAO {
-
-	public $entity$ findById($type_of_key$ id);
-
-	public void insert ($entity$ entity);
-
-	public void update ($entity$ entity);
-
-	public void delete($entity$ entity);
-
-	public List<$entity$> getAll();
+public interface $entity$DAO extends JpaRepository<$entity$, Long>
+{
 }

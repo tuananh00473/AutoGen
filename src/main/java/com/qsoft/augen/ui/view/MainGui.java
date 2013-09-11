@@ -19,8 +19,7 @@ import java.awt.event.ActionListener;
  * Date: 8/29/13
  * Time: 12:12 AM
  */
-public class MainGui extends JFrame
-{
+public class MainGui extends JFrame {
     public static String COLUMN_NAME = "Column Name";
     public static String DATA_TYPE = "Data Type";
 
@@ -39,63 +38,50 @@ public class MainGui extends JFrame
     private JTextField txtOutput;
     private JButton btnOutput;
 
-    public MainGui(final MainController mainController)
-    {
+    public MainGui(final MainController mainController) {
         super();
         setContentPane(mainPanel);
         setSize(600, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        btnConnect.addActionListener(new ActionListener()
-        {
+        btnConnect.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 mainController.doConnect();
             }
         });
 
-        btnDisConnect.addActionListener(new ActionListener()
-        {
+        btnDisConnect.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 mainController.doDisConnect();
             }
         });
 
-        btnGeneric.addActionListener(new ActionListener()
-        {
+        btnGeneric.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 mainController.doGenerate();
             }
         });
 
-        btnQuit.addActionListener(new ActionListener()
-        {
+        btnQuit.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 mainController.doQuit();
             }
         });
 
-        btnOutput.addActionListener(new ActionListener()
-        {
+        btnOutput.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 mainController.setOutput();
             }
         });
 
-        listTable.addListSelectionListener(new ListSelectionListener()
-        {
+        listTable.addListSelectionListener(new ListSelectionListener() {
             @Override
-            public void valueChanged(ListSelectionEvent e)
-            {
+            public void valueChanged(ListSelectionEvent e) {
                 mainController.changeTableListener();
             }
         });
@@ -103,83 +89,67 @@ public class MainGui extends JFrame
 
 //    ================== get/set =================
 
-    public JTable getTableColumn()
-    {
+    public JTable getTableColumn() {
         return tableColumn;
     }
 
-    public void setTableColumn(JTable tableColumn)
-    {
+    public void setTableColumn(JTable tableColumn) {
         this.tableColumn = tableColumn;
     }
 
-    public JList getListTable()
-    {
+    public JList getListTable() {
         return listTable;
     }
 
-    public void setListTable(JList listTable)
-    {
+    public void setListTable(JList listTable) {
         this.listTable = listTable;
     }
 
-    public JTextField getTxtDBName()
-    {
+    public JTextField getTxtDBName() {
         return txtDBName;
     }
 
-    public void setTxtDBName(JTextField txtDBName)
-    {
+    public void setTxtDBName(JTextField txtDBName) {
         this.txtDBName = txtDBName;
     }
 
-    public JTextField getTxtUserName()
-    {
+    public JTextField getTxtUserName() {
         return txtUserName;
     }
 
-    public void setTxtUserName(JTextField txtUserName)
-    {
+    public void setTxtUserName(JTextField txtUserName) {
         this.txtUserName = txtUserName;
     }
 
-    public JPasswordField getTxtPassWord()
-    {
+    public JPasswordField getTxtPassWord() {
         return txtPassWord;
     }
 
-    public void setTxtPassWord(JPasswordField txtPassWord)
-    {
+    public void setTxtPassWord(JPasswordField txtPassWord) {
         this.txtPassWord = txtPassWord;
     }
 
-    public JScrollPane getPanelListTable()
-    {
+    public JScrollPane getPanelListTable() {
         return panelListTable;
     }
 
-    public void setPanelListTable(JScrollPane panelListTable)
-    {
+    public void setPanelListTable(JScrollPane panelListTable) {
         this.panelListTable = panelListTable;
     }
 
-    public JScrollPane getPanelTableColumn()
-    {
+    public JScrollPane getPanelTableColumn() {
         return panelTableColumn;
     }
 
-    public void setPanelTableColumn(JScrollPane panelTableColumn)
-    {
+    public void setPanelTableColumn(JScrollPane panelTableColumn) {
         this.panelTableColumn = panelTableColumn;
     }
 
-    public JTextField getTxtOutput()
-    {
+    public JTextField getTxtOutput() {
         return txtOutput;
     }
 
-    public void setTxtOutput(JTextField txtOutput)
-    {
+    public void setTxtOutput(JTextField txtOutput) {
         this.txtOutput = txtOutput;
     }
 
@@ -197,8 +167,7 @@ public class MainGui extends JFrame
      *
      * @noinspection ALL
      */
-    private void $$$setupUI$$$()
-    {
+    private void $$$setupUI$$$() {
         mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout(0, 0));
         final JPanel panel1 = new JPanel();
@@ -240,7 +209,7 @@ public class MainGui extends JFrame
         CellConstraints cc = new CellConstraints();
         panel4.add(label3, cc.xy(1, 1, CellConstraints.RIGHT, CellConstraints.FILL));
         txtDBName = new JTextField();
-        txtDBName.setText("autogen");
+        txtDBName.setText("simple_db");
         panel4.add(txtDBName, cc.xy(3, 1, CellConstraints.FILL, CellConstraints.DEFAULT));
         final JLabel label4 = new JLabel();
         label4.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -256,10 +225,10 @@ public class MainGui extends JFrame
         txtPassWord = new JPasswordField();
         txtPassWord.setText("123456");
         panel4.add(txtPassWord, cc.xy(3, 5, CellConstraints.FILL, CellConstraints.DEFAULT));
-        btnConnect = new javax.swing.JButton();
+        btnConnect = new JButton();
         btnConnect.setText("CONNECT");
         panel4.add(btnConnect, cc.xy(1, 7));
-        btnDisConnect = new javax.swing.JButton();
+        btnDisConnect = new JButton();
         btnDisConnect.setText("DISCONNECT");
         panel4.add(btnDisConnect, cc.xy(3, 7));
         panelListTable = new JScrollPane();
@@ -273,12 +242,12 @@ public class MainGui extends JFrame
         final JPanel panel5 = new JPanel();
         panel5.setLayout(new GridLayoutManager(11, 5, new Insets(0, 0, 0, 0), -1, -1));
         mainPanel.add(panel5, BorderLayout.SOUTH);
-        btnGeneric = new javax.swing.JButton();
+        btnGeneric = new JButton();
         btnGeneric.setText("GENERATE");
         panel5.add(btnGeneric, new GridConstraints(7, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(91, 25), null, 0, false));
         final Spacer spacer1 = new Spacer();
         panel5.add(spacer1, new GridConstraints(7, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, new Dimension(290, 11), null, 0, false));
-        btnQuit = new javax.swing.JButton();
+        btnQuit = new JButton();
         btnQuit.setText("QUIT");
         panel5.add(btnQuit, new GridConstraints(7, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(213, 25), null, 0, false));
         final JSeparator separator7 = new JSeparator();
@@ -297,8 +266,9 @@ public class MainGui extends JFrame
         label6.setText("        ");
         panel5.add(label6, new GridConstraints(7, 4, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         txtOutput = new JTextField();
+        txtOutput.setText("D:\\Do_An\\ProjectAutoGen");
         panel5.add(txtOutput, new GridConstraints(3, 1, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        btnOutput = new javax.swing.JButton();
+        btnOutput = new JButton();
         btnOutput.setText("OUTPUT");
         panel5.add(btnOutput, new GridConstraints(3, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label7 = new JLabel();
@@ -315,8 +285,7 @@ public class MainGui extends JFrame
     /**
      * @noinspection ALL
      */
-    public JComponent $$$getRootComponent$$$()
-    {
+    public JComponent $$$getRootComponent$$$() {
         return mainPanel;
     }
 }

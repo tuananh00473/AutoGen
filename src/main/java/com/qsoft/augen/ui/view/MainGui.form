@@ -121,7 +121,7 @@
                       <forms defaultalign-horz="false"/>
                     </constraints>
                     <properties>
-                      <text value="autogen"/>
+                      <text value="simple_db"/>
                     </properties>
                   </component>
                   <component id="d0da" class="javax.swing.JLabel">

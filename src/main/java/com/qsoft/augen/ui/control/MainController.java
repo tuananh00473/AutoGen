@@ -31,7 +31,7 @@ public class MainController
     public static String PATH_OUT_PUT_INTERFACE_SERVICE;
     public static String PATH_OUT_PUT_SERVICE_IMLP;
     public static String PATH_OUT_PUT_INTERFACE_DAO;
-    public static String PATH_OUT_PUT_DAO_IMLP;
+//    public static String PATH_OUT_PUT_DAO_IMLP;
 
     public static String PATH_OUT_PUT_PERSISTENCE_FILE;
     public static String PATH_OUT_PUT_RESOURCE;
@@ -58,14 +58,13 @@ public class MainController
     public void doGenerate()
     {
         StringTemplateService.genEntity(metaTables, PATH_OUT_PUT_ENTITY);
-        StringTemplateService.genDAOInterface(metaTables, PATH_OUT_PUT_INTERFACE_DAO);
-        StringTemplateService.genDaoImpl(metaTables, PATH_OUT_PUT_DAO_IMLP);
-        StringTemplateService.genServiceInterface(metaTables, PATH_OUT_PUT_INTERFACE_SERVICE);
-        StringTemplateService.genServiceImpl(metaTables, PATH_OUT_PUT_SERVICE_IMLP);
-        StringTemplateService.genPomFile(PATH_OUT_PUT);
-        StringTemplateService.genPersistenceFile(PATH_OUT_PUT_PERSISTENCE_FILE);
-        StringTemplateService.genPropertiesFile(propertyDB, PATH_OUT_PUT_RESOURCE);
-        StringTemplateService.genSpringConfigFile(propertyDB, PATH_OUT_PUT_RESOURCE);
+//        StringTemplateService.genDAOInterface(metaTables, PATH_OUT_PUT_INTERFACE_DAO);
+//        StringTemplateService.genServiceInterface(metaTables, PATH_OUT_PUT_INTERFACE_SERVICE);
+//        StringTemplateService.genServiceImpl(metaTables, PATH_OUT_PUT_SERVICE_IMLP);
+//        StringTemplateService.genPomFile(PATH_OUT_PUT);
+//        StringTemplateService.genPersistenceFile(PATH_OUT_PUT_PERSISTENCE_FILE);
+//        StringTemplateService.genPropertiesFile(propertyDB, PATH_OUT_PUT_RESOURCE);
+//        StringTemplateService.genSpringConfigFile(propertyDB, PATH_OUT_PUT_RESOURCE);
     }
 
     public void doQuit()
@@ -184,10 +183,10 @@ public class MainController
             PATH_OUT_PUT_INTERFACE_SERVICE = PATH_OUT_PUT + PATH_PROJECT + "business/";
             PATH_OUT_PUT_SERVICE_IMLP = PATH_OUT_PUT + PATH_PROJECT + "business/impl/";
             PATH_OUT_PUT_INTERFACE_DAO = PATH_OUT_PUT + PATH_PROJECT + "persistence/dao/";
-            PATH_OUT_PUT_DAO_IMLP = PATH_OUT_PUT + PATH_PROJECT + "persistence/dao/impl/";
+//            PATH_OUT_PUT_DAO_IMLP = PATH_OUT_PUT + PATH_PROJECT + "persistence/dao/impl/";
 
-            PATH_OUT_PUT_PERSISTENCE_FILE = PATH_OUT_PUT + "src/main/resources/META-INF/";
-            PATH_OUT_PUT_RESOURCE = PATH_OUT_PUT + "src/main/resources/";
+            PATH_OUT_PUT_PERSISTENCE_FILE = PATH_OUT_PUT + "src/main/webapp/META-INF/";
+            PATH_OUT_PUT_RESOURCE = PATH_OUT_PUT + "src/main/webapp/";
         }
     }
 }

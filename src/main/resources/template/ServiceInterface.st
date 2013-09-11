@@ -17,5 +17,7 @@ public interface $entity$Service {
 
 	public void remove($entity$ entity);
 
+	public void remove($type_of_key$ id);
+
 	public List<$entity$> getAll();
 }
